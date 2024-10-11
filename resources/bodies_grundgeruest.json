@@ -1,0 +1,12 @@
+{
+    "bodies": {
+        "body": [
+            {
+                "model": "...",
+                "emptymass": ,
+                "length": ,
+                "diameter": 
+            }
+        ]
+    }
+}

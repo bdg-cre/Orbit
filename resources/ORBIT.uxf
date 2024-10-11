@@ -1,0 +1,323 @@
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>374</x><y>0</y><w>429</w><h>429</h></coordinates><panel_attributes>Engine
+--
+- engineClass : String
+- type : String
+- model : String
+- delay : Delay
+- impulse : Impulse
+- thrust : Thrust
+- propellantMass : double
+- totalEngineMass : double
+--
++ Engine()
++ Engine(engineClass : String, type : String, 
+model : String, delay : Delay, impulse : Impulse, 
+thrust : Thrust, 
+propellantMass : double, totalEngineMass : double)
+
++ getEngineClass() : String
++ getType() : String
++ getModel() : String
++ getDelay() : Delay
++ getImpulse() : Impulse
++ getThrust() : Thrust
++ getPropellantMass() : double
++ getTotalEngineMass() : double
++ toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>319</w><h>143</h></coordinates><panel_attributes>Impulse
+--
+- totalImpulse : double
+--
++ Impulse()
++ Impulse(totalImpulse : double)
+
++ getTotalImpulse() : double
++ isImpulseInRange(impulse : double) : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>99</x><y>154</y><w>220</w><h>121</h></coordinates><panel_attributes>Thrust
+--
+- peakThrust : double
+--
++ Thrust()
++ Thrust(peakThrust : double)
+
++ getPeakThrust() : double
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>165</x><y>286</y><w>154</w><h>132</h></coordinates><panel_attributes>Delay
+--
+- dly : double
+--
++ Delay()
++ Delay(dly : int)
+
++ getDelay() : double </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>308</x><y>44</y><w>88</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>60;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>308</x><y>187</y><w>88</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>60;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>308</x><y>297</y><w>88</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>60;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>946</x><y>781</y><w>286</w><h>121</h></coordinates><panel_attributes>XMLReader
+--
+- getXMLFile(fileName : String) : Document
+- returnEngineList() : NodeList
+- returnBodyList() : NodeList
++ getBodies() : List&lt;Body&gt;
++ getEngines() : List&lt;Engine&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>154</x><y>1232</y><w>737</w><h>429</h></coordinates><panel_attributes>Calculations
+--
+- OZCONVERT : double = 28.34952
+- MMINCHCONVERT : double = 25.4
+- PI : double = 3.14
+- RHO : double = 1.2
+- DRAGCD : double = 0.75
+- G : double = 9.8
+- P : double = 101325
+- R : double = 287.05
+--
++ calculateMassM(massEmpty : double, massEngine : double) : double
++ calculateAreaA(diameterD : double) : double
++ calculateBurnTime(impulseI : double, thrustT : double) : double
++ calculateGravForceG(massM : double) : double
++ calculateWindResistanceFactor(areaA : double) : double
++ calculateQ(thrustT : double, q : double, windResFact : double) : double
++ calculateX(windResFact : double, q : double, massM : double) : double
++ calculateVelocityV(q : double, x : double, burntimeT : double) : double
++ calculateBoostPhaseYB(massM : double, windResFact : double, thrustT : double, velocityV : double) : double
++ calculateCoastPhaseYC(massM : double, windResFact : double, velocityV : double) : double
++ calculateAltitude(yb : double, yc : double) : double
++ calculateAirDensity(temperature : double, humidity : double) : double
++ calculateWindEffect(windSpeed : double, windDirection : double, windGust : double) : double
++ calculatePrecipEffect(precipProbability : double) : double
++ calculateAdjustedAltitude(scaledAltitudeA : double, airDensity : double, windEffect : double, precipEffect : double) : double
+- limitDecimalPlaces(value : double, decimalPlaces : int) : double
++ passToJSONWriter(calcResults : Map&lt;String, Object&gt;, sc : Scanner) : void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>0</y><w>308</w><h>242</h></coordinates><panel_attributes>Body
+--
+- model : String
+- emptyMass : double
+- length : double
+- diameter : double
+--
++ Body()
++ Body(model : String, emptyMass : double, 
+length : double, diameter : double)
+
++ getModel() : String
++ getEmptyMass() : double
++ getLength() : double
++ getDiameter() : double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>902</x><y>0</y><w>374</w><h>165</h></coordinates><panel_attributes>Rocket
+--
+- engine : Engine
+- body : Body
+--
++ Rocket()
++ Rocket(body : Body, engine : Engine)
+
++ getEngine() : Engine
++ getBody() : Body</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>792</x><y>55</y><w>132</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>100;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1265</x><y>55</y><w>143</w><h>44</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>10;20;110;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>946</x><y>198</y><w>286</w><h>220</h></coordinates><panel_attributes>Selector
+--
+- selectedEngine : Engine
+- selectedBody : Body
+- selectedRocket : Rocket
+- readerSelector : ReaderSelector
+--
++ Selector()
++ Selector(readerSelector : ReaderSelector)
+
++ inputFileType(sc : Scanner) : void
++ selectBody(sc : Scanner) : Body
++ selectEngine(sc : Scanner) : Engine
++ createRocket() : Rocket</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1078</x><y>154</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>902</x><y>451</y><w>374</w><h>275</h></coordinates><panel_attributes>ReaderSelector
+--
+- xmlReader : XMLReader
+- jsonReader : JSONReader
+- csvReader : CSVReader
+- fileType : FileType
+--
++ ReaderSelector()
++ ReaderSelector(xmlReader : XMLReader,
+jsonReader : JSONReader, csvFileReader : CSVFileReader)
+
++ selectFileType(sc : Scanner) : void
++ selectReader&lt;T&gt;(clazz : Class&lt;T&gt;) : List&lt;T&gt;
+- castList&lt;T&gt;(clazz : Class&lt;T&gt;, rawList : List&lt;?&gt;) : List&lt;T&gt;
+- getXMLData&lt;T&gt;(clazz : Class&lt;T&gt;) :  List&lt;T&gt;
+- getJSONData&lt;T&gt;(clazz : Class&lt;T&gt;) : List&lt;T&gt;
+- getCSVData&lt;T&gt;(clazz : Class&lt;T&gt;) :  List&lt;T&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1276</x><y>781</y><w>374</w><h>121</h></coordinates><panel_attributes>JSONReader
+--
+_- jr : JSONReader_
+--
++ getWeather() : void
++ getEngines() : void
++ getBodies() : void
++ readJSONFile &lt;T&gt;(fileName : String, clazz : Class&lt;T&gt; ) : T
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>627</x><y>781</y><w>275</w><h>121</h></coordinates><panel_attributes>CSVFileReader
+--
++ getEngines() : List&lt;Engine&gt;
++ getBodies() : List&lt;Body&gt;
+- readCSVFile&lt;T&gt;(fileName : String,
+ clazz : Class&lt;T&gt;) : List&lt;T&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1078</x><y>715</y><w>33</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1078</x><y>737</y><w>407</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>350;40;350;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>759</x><y>737</y><w>352</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;300;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>847</x><y>1056</y><w>264</w><h>143</h></coordinates><panel_attributes>JSONBodies
+--
+- bodies : Bodies
+--
++ getBodyList() : List&lt;Body&gt;
+{innerclass
+_Bodies_
+--
+- bodyList : List&lt;Body&gt;
+--
++ getBodies() : List&lt;Body&gt;
+innerclass}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>539</x><y>1056</y><w>253</w><h>143</h></coordinates><panel_attributes>JSONEngines
+--
+- engines : Engines
+--
++ getEnginesList() : List&lt;Engine&gt;
+{innerclass
+_Engines_
+--
+- engineList : List&lt;Engine&gt;
+-
++ getEngines() : List&lt;Engine&gt;
+innerclass}
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1342</x><y>1232</y><w>264</w><h>484</h></coordinates><panel_attributes>JSONWeather
+--
+- data : Data
+- location : Location
+--
++ getData() : Data
++ getLocation() : Location
+{innerclass
+_Data_
+--
+- values : Values
+--
++ getValues() : Values 
+innerclass}
+{innerclass
+_Values_
+--
+- temperature : double
+- humidity : double
+- windSpeed : double
+- windDirection : double
+- windGust : double
+- precipProbability : double
+--
++ getTemperature() : double
++ getHumidity() : double
++ getWindSpeed() : double
++ getWindDirection() : double
++ getWindGust() : double
++ getPrecipProbability() : double
+innerclass}
+{innerclass
+_Location_
+--
+- name : String
+- type : String
+--
++ getName() : String
+innerclass}
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1463</x><y>891</y><w>66</w><h>363</h></coordinates><panel_attributes>&lt;&lt;use&gt;&gt;
+
+
+
+
+
+
+
+
+
+lt=&lt;..
+</panel_attributes><additional_attributes>10;310;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>649</x><y>979</y><w>847</w><h>99</h></coordinates><panel_attributes>lt=&lt;..
+</panel_attributes><additional_attributes>10;70;10;20;750;20</additional_attributes></element><element><id>Relation</id><coordinates><x>385</x><y>418</y><w>176</w><h>737</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;&lt;contains&gt;&gt; </panel_attributes><additional_attributes>10;10;10;650;140;650</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>231</y><w>671</w><h>946</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+&lt;&lt;contains&gt;&gt;</panel_attributes><additional_attributes>530;10;530;840;10;840</additional_attributes></element><element><id>Relation</id><coordinates><x>1078</x><y>407</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>979</x><y>1540</y><w>286</w><h>66</h></coordinates><panel_attributes>WeatherAPI
+--
++ getWeatherData(sc : Scanner) : String
+- handleErrorResponse(status : int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>957</x><y>1375</y><w>330</w><h>110</h></coordinates><panel_attributes>JSONWriter
+--
+_- om : ObjectMapper_
+--
++ weatherJSONWriter() : void
++ saveResultsJSON(calcValues : Map&lt;String, Object&gt;,
+ sc : Scanner) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>1474</y><w>88</w><h>88</h></coordinates><panel_attributes>&lt;&lt;create&gt;&gt;
+lt=&lt;..</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1276</x><y>1408</y><w>88</w><h>44</h></coordinates><panel_attributes>&lt;&lt;use&gt;&gt;
+lt=&lt;..</panel_attributes><additional_attributes>60;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>1419</y><w>99</w><h>55</h></coordinates><panel_attributes>&lt;&lt;use&gt;&gt;
+
+lt=&lt;..</panel_attributes><additional_attributes>70;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>968</x><y>990</y><w>33</w><h>88</h></coordinates><panel_attributes>
+
+lt=&lt;..</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1342</x><y>605</y><w>275</w><h>110</h></coordinates><panel_attributes>ReaderFactory
+--
+_+ createXMLReader() : XMLReader_
+_+ createJSONReader() : JSONReader_
+_+ createCSVFileReader() : CSVFileReader_
+_+ createReaderSelector() : ReaderSelector_
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1342</x><y>451</y><w>121</w><h>132</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+FileType
+--
+XML
+
+JSON
+
+CSV</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>616</y><w>231</w><h>176</h></coordinates><panel_attributes>CSVConverter
+--
+{innerclass
+_+ DelayConverter_
+--
+# convert(value : String) : Delay
+innerclass}
+{innerclass
+_+ ImpulseConverter_
+--
+# convert(value : String) : Impulse
+innerclass}
+{innerclass
+_+ ThrustConverter_
+--
+# convert(value : String) : Thrust
+innerclass}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1045</x><y>1254</y><w>132</w><h>66</h></coordinates><panel_attributes>&lt;&lt;external&gt;&gt;
+ObjectMapper
+--
++ ObjectMapper()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>1309</y><w>88</w><h>88</h></coordinates><panel_attributes>lt=&lt;..
+&lt;&lt;create&gt;&gt;</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>781</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>825</y><w>231</w><h>66</h></coordinates><panel_attributes>&lt;&lt;external&gt;&gt;
+/AbstractBeanField&lt;T, I&gt;/
+--
+/# convert(value : String) : Object/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>22</x><y>132</y><w>66</w><h>506</h></coordinates><panel_attributes>lt=&lt;..&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;440</additional_attributes></element><element><id>Relation</id><coordinates><x>22</x><y>220</y><w>99</w><h>33</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>22</x><y>341</y><w>165</w><h>33</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>99</x><y>451</y><w>176</w><h>66</h></coordinates><panel_attributes>Above classes use 
+"Jackson" and
+"OpenCSV" annotations
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>22</x><y>341</y><w>99</w><h>132</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;70;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1265</x><y>649</y><w>99</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1265</x><y>528</y><w>99</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element></diagram>

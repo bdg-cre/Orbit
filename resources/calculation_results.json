@@ -1,0 +1,17 @@
+{
+  "Mass" : 0.05822,
+  "Area" : "0.000491",
+  "Wind Resistance Factor" : "0.000221",
+  "Burn Time" : 0.624113,
+  "Gravforce" : 0.571,
+  "Q" : 247.4,
+  "X" : 1.878,
+  "Velocity" : 130.4,
+  "Boost Phase Distance" : 42.86,
+  "Coast Phase Distance" : 266.9,
+  "Altitude" : 309.76,
+  "Air density" : 1.21,
+  "Wind effect" : 0.845,
+  "Precipitation effect" : 1.0,
+  "Adjusted altitude" : 216.32
+}
