@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: simulator.EngineTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! -- in simulator.EngineTest
+simulator.EngineTest.testParameterizedConstructor -- Time elapsed: 0.005 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Delay should be the same as provided. ==> expected: <simulator.Engine@408d971b> but was: <simulator.Delay@6c6cb480>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertSame.failNotSame(AssertSame.java:50)
+	at org.junit.jupiter.api.AssertSame.assertSame(AssertSame.java:35)
+	at org.junit.jupiter.api.Assertions.assertSame(Assertions.java:2873)
+	at simulator.EngineTest.testParameterizedConstructor(EngineTest.java:51)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

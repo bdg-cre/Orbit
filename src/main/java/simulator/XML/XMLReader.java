@@ -12,6 +12,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import simulator.Body;
+import simulator.ConfigManager;
 import simulator.Delay;
 import simulator.Engine;
 import simulator.Impulse;
@@ -28,28 +29,44 @@ import simulator.Thrust;
  */
 public class XMLReader {
 
+    static ConfigManager configManager = new ConfigManager();
+
     /**
      * Parses the specified XML-file and returns a {@link Document} object.
      * <p>
-     * This method is used internally to read XML data from the file specified by {@code fileName}.
+     * This method is used internally to read XML data from the file passed from
+     * {@link ConfigManager}.
      * </p>
      * 
-     * @param fileName the name of the XML file (without extension)
      * @return the {@link Document} object representing the XML data
      */
-    private Document getXMLFile(String fileName) {
+    private Document getXMLBodies() {
 
         Document xml = null;
         try {
-            File xmlFile = new File("resources\\" + fileName + ".xml");
+            File xmlBodies = configManager.returnXMLBodies();
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
-            xml = db.parse(xmlFile);
+            xml = db.parse(xmlBodies);
             xml.getDocumentElement().normalize(); // .xml gets normalized
 
 
         } catch (SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace(); // Handle XML parsing exceptions
+        }
+        return xml;
+    }
+
+    public Document getXMLEngines() {
+        Document xml = null;
+        try {
+            File xmlEngines = configManager.returnXMLEngines();
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            xml = db.parse(xmlEngines);
+            xml.getDocumentElement().normalize();
+        } catch (SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
         }
         return xml;
     }
@@ -62,7 +79,7 @@ public class XMLReader {
      * @return a {@link NodeList} of "engine" elements
      */
     private NodeList returnEngineList() {
-        Document xml = getXMLFile("engines");
+        Document xml = getXMLEngines();
         NodeList engineList = xml.getElementsByTagName("engine");
         return engineList;
     }
@@ -75,7 +92,7 @@ public class XMLReader {
      * @return a {@link NodeList} of "body" elements
      */
     private NodeList returnBodyList() {
-        Document xml = getXMLFile("bodies");
+        Document xml = getXMLBodies();
         NodeList bodyList = xml.getElementsByTagName("body");
         return bodyList;
     }

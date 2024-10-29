@@ -149,7 +149,7 @@ public class JSONReader {
         T result = null;
         ObjectMapper om = new ObjectMapper();
         try {
-            // Enable source location information in JSON parsing 
+            // Enable source location information in JSON parsing
             om.enable(JsonParser.Feature.INCLUDE_SOURCE_IN_LOCATION);
             // Read JSON data from the file and map it to the specified class
             result = om.readValue(new File("resources\\" + fileName + ".json"), clazz);

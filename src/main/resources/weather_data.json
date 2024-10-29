@@ -1,0 +1,16 @@
+{
+  "data" : {
+    "values" : {
+      "temperature" : 19.31,
+      "humidity" : 73.0,
+      "windSpeed" : 1.81,
+      "windDirection" : 39.13,
+      "windGust" : 7.13,
+      "precipitationProbability" : 0.0
+    }
+  },
+  "location" : {
+    "name" : "Garmisch-Partenkirchen, Landkreis Garmisch-Partenkirchen, Bayern, Deutschland",
+    "type" : "administrative"
+  }
+}

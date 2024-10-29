@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: simulator.WeatherAPITest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! -- in simulator.WeatherAPITest
+simulator.WeatherAPITest.testGetWeatherDataSuccess -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.net.URL.openConnection()" because "this.mockUrl" is null
+	at simulator.WeatherAPITest.testGetWeatherDataSuccess(WeatherAPITest.java:31)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

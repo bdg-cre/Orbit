@@ -1,0 +1,12 @@
+simulator\ConfigTest.class
+simulator\CalculationsTest.class
+simulator\JSONReaderTest.class
+simulator\SelectorTest.class
+simulator\EngineTest.class
+simulator\ThrustTest.class
+simulator\WeatherAPITest.class
+simulator\DelayTest.class
+simulator\RocketTest.class
+simulator\BodyTest.class
+simulator\ImpulseTest.class
+simulator\ReaderSelectorTest.class

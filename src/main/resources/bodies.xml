@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bodies>
+    <body model="Graaf-III">
+        <emptymass>34.0</emptymass>
+        <length>30.7</length>
+        <diameter>25.0</diameter>
+    </body>
+    <body model="Graaf-Max">
+        <emptymass>68.0</emptymass>
+        <length>41.4</length>
+        <diameter>42.0</diameter>
+    </body>
+    <body model="Graaf-Rotstein-4">
+        <emptymass>104.9</emptymass>
+        <length>72.6</length>
+        <diameter>52.0</diameter>
+    </body>
+    <body model="Sternenstaub">
+        <emptymass>20.7</emptymass>
+        <length>18.8</length>
+        <diameter>19.0</diameter>
+    </body>
+</bodies>

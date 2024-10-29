@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engines>
+    <engine class="1/2A">
+        <type description="Graaf 1/2A6-2">
+            <model>01589</model>
+            <delay>2.0</delay>
+            <totalimpulse>1.1</totalimpulse>
+            <peakthrust>7.9</peakthrust>
+            <propellantmass>2.6</propellantmass>
+            <totalmass>13.8</totalmass>
+        </type>
+    </engine>
+    <engine class="A">
+        <type description="Graaf A8-0">
+            <model>01567</model>
+            <delay>0.0</delay>
+            <totalimpulse>2.2</totalimpulse>
+            <peakthrust>9.6</peakthrust>
+            <propellantmass>3.8</propellantmass>
+            <totalmass>13.9</totalmass>
+        </type>
+    </engine>
+    <engine class="B">
+        <type description="Graaf B4-2">
+            <model>02246</model>
+            <delay>2.0</delay>
+            <totalimpulse>4.3</totalimpulse>
+            <peakthrust>9.7</peakthrust>
+            <propellantmass>3.3</propellantmass>
+            <totalmass>16.7</totalmass>
+        </type>
+    </engine>
+    <engine class="C">
+        <type description="Graaf C6-3">
+            <model>08322</model>
+            <delay>3.0</delay>
+            <totalimpulse>8.8</totalimpulse>
+            <peakthrust>14.1</peakthrust>
+            <propellantmass>10.8</propellantmass>
+            <totalmass>24.1</totalmass>
+        </type>
+        <type description="Graaf C6-7">
+            <model>01348</model>
+            <delay>7.0</delay>
+            <totalimpulse>8.8</totalimpulse>
+            <peakthrust>14.1</peakthrust>
+            <propellantmass>10.8</propellantmass>
+            <totalmass>24.2</totalmass>
+        </type>
+    </engine>
+    <engine class="D">
+        <type description="Graaf D12-3">
+            <model>01125</model>
+            <delay>3.0</delay>
+            <totalimpulse>16.8</totalimpulse>
+            <peakthrust>29.7</peakthrust>
+            <propellantmass>21.1</propellantmass>
+            <totalmass>41.4</totalmass>
+        </type>
+    </engine>
+    <engine class="E">
+        <type description="Graaf E12-6">
+            <model>01223</model>
+            <delay>6.0</delay>
+            <totalimpulse>27.2</totalimpulse>
+            <peakthrust>33.3</peakthrust>
+            <propellantmass>35.9</propellantmass>
+            <totalmass>59.9</totalmass>
+        </type>
+    </engine>
+    <engine class="F">
+        <type description="Graaf F15-4">
+            <model>01234</model>
+            <delay>4.0</delay>
+            <totalimpulse>49.6</totalimpulse>
+            <peakthrust>25.3</peakthrust>
+            <propellantmass>60.0</propellantmass>
+            <totalmass>101.5</totalmass>
+        </type>
+    </engine>
+</engines>

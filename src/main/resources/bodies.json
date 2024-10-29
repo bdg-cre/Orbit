@@ -1,0 +1,30 @@
+{
+    "bodies": {
+        "body": [
+            {
+                "model": "Graaf-III",
+                "emptymass": 34.0,
+                "length": 30.7,
+                "diameter": 25.0
+            },
+            {
+                "model": "Graaf-Max",
+                "emptymass": 68.0,
+                "length": 41.4,
+                "diameter": 42.0
+            },
+            {
+                "model": "Graaf-Rotstein-4",
+                "emptymass": 104.9,
+                "length": 72.6,
+                "diameter": 52.0
+            },
+            {
+                "model": "Sternenstaub",
+                "emptymass": 20.7,
+                "length": 18.8,
+                "diameter": 19.0
+            }
+        ]
+    }
+}

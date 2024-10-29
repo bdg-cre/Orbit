@@ -1,0 +1,118 @@
+{
+    "engines": {
+        "engine": [
+            {
+                "class": "1/2A",
+                "description": "Graaf 1/2A6-2",
+                "model": "01589",
+                "delay": 2.0,
+                "impulse": {
+                    "totalimpulse": 1.1
+                },
+                "thrust": {
+                    "peakthrust": 7.9
+                },
+                "propellantmass": 2.6,
+                "totalmass": 13.8
+            },
+            {
+                "class": "A",
+                "description": "Graaf A8-0",
+                "model": "01567",
+                "delay": 0.0,
+                "impulse": {
+                    "totalimpulse": 2.2
+                },
+                "thrust": {
+                    "peakthrust": 9.6
+                },
+                "propellantmass": 3.8,
+                "totalmass": 13.9
+            },
+            {
+                "class": "B",
+                "description": "Graaf B4-2",
+                "model": "02246",
+                "delay": 2.0,
+                "impulse": {
+                    "totalimpulse": 4.3
+                },
+                "thrust": {
+                    "peakthrust": 7.5
+                },
+                "propellantmass": 3.3,
+                "totalmass": 16.7
+            },
+            {
+                "class": "C",
+                "description": "Graaf C6-3",
+                "model": "08322",
+                "delay": 3.0,
+                "impulse": {
+                    "totalimpulse": 8.8
+                },
+                "thrust": {
+                    "peakthrust": 14.1
+                },
+                "propellantmass": 10.8,
+                "totalmass": 24.1
+            },
+            {
+                "class": "C",
+                "description": "Graaf C6-7",
+                "model": "01348",
+                "delay": 7.0,
+                "impulse": {
+                    "totalimpulse": 8.8
+                },
+                "thrust": {
+                    "peakthrust": 14.1
+                },
+                "propellantmass": 10.8,
+                "totalmass": 24.2
+            },
+            {
+                "class": "D",
+                "description": "Graaf D12-3",
+                "model": "01125",
+                "delay": 3.0,
+                "impulse": {
+                    "totalimpulse": 16.8
+                },
+                "thrust": {
+                    "peakthrust": 29.7
+                },
+                "propellantmass": 21.1,
+                "totalmass": 41.1
+            },
+            {
+                "class": "E",
+                "description": "Graaf E12-6",
+                "model": "01223",
+                "delay": 6.0,
+                "impulse": {
+                    "totalimpulse": 27.2
+                },
+                "thrust": {
+                    "peakthrust": 33.3
+                },
+                "propellantmass": 35.9,
+                "totalmass": 59.9
+            },
+            {
+                "class": "F",
+                "description": "Graaf F15-4",
+                "model": "01234",
+                "delay": 4.0,
+                "impulse": {
+                    "totalimpulse": 49.6
+                },
+                "thrust": {
+                    "peakthrust": 25.3
+                },
+                "propellantmass": 60.0,
+                "totalmass": 101.5
+            }
+        ]
+    }
+}
